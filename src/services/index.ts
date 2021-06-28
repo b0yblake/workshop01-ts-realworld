@@ -1,5 +1,4 @@
 import { PokeTypes } from "../@types/PokeTypes.interface";
-import { ImportMeta } from "../@types/ImportTypeEnv.interface";
 
 export const pokeSearch = async (search: string):  Promise<void> => {
   await fetch(`${import.meta.env.VITE_API_V2}${search}`)
