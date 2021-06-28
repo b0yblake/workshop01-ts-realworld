@@ -1,22 +1,23 @@
 <template>
-  <div class="">
-    HomePage
+  <div class="search">
+    
   </div>
 </template>
 
 <script>
 import {
   ref,
+  defineComponent,
 } from 'vue'
 
-export default {
-  name: "HomePage",
+export default defineComponent({
+  name: "TheSearch",
   setup(props, context) {
 
     return {
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

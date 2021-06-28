@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('@/views/HomePage.vue'), // use default page
+    component: () => import('@/views/Home.vue'), // use default page
     children: [
       // { path: '/', component: () => import('./views/index.vue') },
       // { path: '/album/:path/:id.html', component: () => import('./views/album.vue') },
