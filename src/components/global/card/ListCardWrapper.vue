@@ -1,24 +1,38 @@
 <template>
   <div class="title__top">
-    <h2 class="title__main">Pokedex</h2>
+    <h2 class="title__main">What are<br> you looking for?</h2>
 
     <!-- search Area -->
     <TheSearch @searchText="handleSearchText" />
   </div>
   
-  <!-- list card summary -->
-  <section class="card__list">
+  <section class="card__list" v-show="searchText">
     <ul class="card__list-wrap">
-      <li class="item green" v-for="(poke, index) in pokedexInit.data" :key="index">
-        <!-- <CardItem :pokedex="poke" /> -->
+      <li class="item green">
+        <CardItem :pokedex="pokedex" />
       </li>
     </ul>
-
-    pokedexInit: {{ pokedexInit.data }}
   </section>
 
-
-
+  <section class="card__list category-card__list">
+    <ul class="card__list-wrap">
+      <li class="item green">
+        <CategoryTag :title="'Pokémon'" :color="'green'" />
+      </li>
+      <li class="item green">
+        <CategoryTag :title="'Items'" :color="'red'" />
+      </li>
+      <li class="item green">
+        <CategoryTag :title="'Moves'" :color="'blue'" />
+      </li>
+      <li class="item green">
+        <CategoryTag :title="'Types'" :color="'yellow'" />
+      </li>
+      <li class="item green">
+        <CategoryTag :title="'Favorites'" :color="'violet'" />
+      </li>
+    </ul>
+  </section>
 
 </template>
 
@@ -31,8 +45,8 @@ import {
   onMounted,
 } from 'vue'
 import { pokeSearch } from "@/services"
-import { pokeInit } from "@/services"
 import { PokeInterface } from '@/@types/PokeTypes.interface'
+// import { pokeInit } from "@/services"
 // import { PokeTypes } from '@/@types/PokeTypes.interface'
 
 
@@ -41,7 +55,7 @@ export default defineComponent({
   setup() {
 
     let pokedex = reactive<{ data: PokeInterface }>({ data: {} });
-    let pokedexInit = reactive<{ data: PokeInterface }>({ data: {} });
+    // let pokedexInit = reactive<{ data: PokeInterface }>({ data: {} });
     let searchText = ref(null);
 
     const handleSearchText = (res: string) => {
@@ -57,21 +71,17 @@ export default defineComponent({
       // console.log("data: ", pokedex)
     };
 
-    const pokeInitResponse = async (): Promise<void> => {
-      const response = await pokeInit()
-      pokedexInit.data = response
+    // const pokeInitResponse = async (): Promise<void> => {
+    //   const response = await pokeInit()
+    //   pokedexInit.data = response
 
-    };
-
-    onMounted(() => {
-      pokeInitResponse()
-
-      console.log("pokedexInit: ", pokedexInit)
-    })
+    // };
+    // onMounted(() => {
+    //   pokeInitResponse()
+    // })
 
     return {
       pokedex,
-      pokedexInit,
       searchText,
       handleSearchText,
       pokeSearchResponse,

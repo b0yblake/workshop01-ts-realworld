@@ -2,9 +2,8 @@
   &__top {
     position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 10px 16px;
     color: #fff;
   }
@@ -98,3 +97,4 @@
     padding: 5px 10px;
   }
 }
+
