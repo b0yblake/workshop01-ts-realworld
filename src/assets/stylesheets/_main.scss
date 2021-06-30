@@ -1,0 +1,100 @@
+.title {
+  &__top {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    color: #fff;
+  }
+  &__main {
+    color: #000;
+  }
+  &__text,
+  &__main {
+    font-size: 28px;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &__text {
+    text-transform: capitalize;
+  }
+  &__info {
+    max-width: calc(100% - 65px);
+  }
+
+
+  
+}
+
+.chip__list {
+  .chip {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.35);
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+}
+
+.card {
+  &__list {
+    margin: 20px 0 100px;
+    padding: 0 16px;
+
+    &-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+      .item {
+          flex: 1 1 calc(50% - 10px);
+          border-radius: 10px;
+          margin-bottom: 10px;
+          
+          &:nth-child(2n) {
+            margin-left: 10px;
+          }
+
+          &.green {
+            background-color: #49d0b0;
+          }
+          &.red {
+            background-color: #fc6c6c;
+          }
+          &.blue {
+            background-color: #73b8f9;
+          }
+          &.yellow {
+            background-color: #ffd46c;
+          }
+        
+      }
+
+
+
+    }
+  }
+}
+
+.search {
+  input {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+  }
+  button {
+    border: 1px solid #ccc;
+    margin-left: 5px;
+    height: 32px;
+    padding: 5px 10px;
+  }
+}

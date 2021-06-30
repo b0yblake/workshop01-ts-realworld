@@ -2,9 +2,9 @@
   <div class="title__top">
     <div class="title__info">
       <h2 class="title__text">Charmander</h2>
-      <ul class="classify">
-        <li class="item">Green</li>
-        <li class="item">Posion</li>
+      <ul class="chip__list">
+        <li class="chip">Green</li>
+        <li class="chip">Posion</li>
       </ul>
     </div>
     <strong class="ranking">#004</strong>

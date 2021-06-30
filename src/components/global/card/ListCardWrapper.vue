@@ -3,84 +3,82 @@
     <h2 class="title__main">Pokedex</h2>
 
     <!-- search Area -->
-    <TheSearch />
+    <TheSearch @searchText="handleSearchText" />
   </div>
   
   <!-- list card summary -->
   <section class="card__list">
-    <ul class="card__list-item">
-      <li class="item green">
-        <CardItem />
+    <ul class="card__list-wrap">
+      <li class="item green" v-for="(poke, index) in pokedexInit.data" :key="index">
+        <!-- <CardItem :pokedex="poke" /> -->
       </li>
     </ul>
+
+    pokedexInit: {{ pokedexInit.data }}
   </section>
 
 
-  
+
 
 </template>
 
-<script>
+<script lang="ts">
 import {
-  ref,
   defineComponent,
+  ref,
+  reactive,
+  toRefs,
+  onMounted,
 } from 'vue'
+import { pokeSearch } from "@/services"
+import { pokeInit } from "@/services"
+import { PokeInterface } from '@/@types/PokeTypes.interface'
+// import { PokeTypes } from '@/@types/PokeTypes.interface'
+
 
 export default defineComponent({
   name: "ListCardWrapper",
-  setup(props, context) {
+  setup() {
+
+    let pokedex = reactive<{ data: PokeInterface }>({ data: {} });
+    let pokedexInit = reactive<{ data: PokeInterface }>({ data: {} });
+    let searchText = ref(null);
+
+    const handleSearchText = (res: string) => {
+      searchText.value = res.toLowerCase()
+
+      //Fire search each time click button
+      pokeSearchResponse( searchText.value)
+    }
+
+    const pokeSearchResponse = async (search: string): Promise<void> => {
+      const response = await pokeSearch(search)
+      pokedex.data = response
+      // console.log("data: ", pokedex)
+    };
+
+    const pokeInitResponse = async (): Promise<void> => {
+      const response = await pokeInit()
+      pokedexInit.data = response
+
+    };
+
+    onMounted(() => {
+      pokeInitResponse()
+
+      console.log("pokedexInit: ", pokedexInit)
+    })
 
     return {
+      pokedex,
+      pokedexInit,
+      searchText,
+      handleSearchText,
+      pokeSearchResponse,
     }
   }
 })
 </script>
 
-<style lang="scss">
-.title {
-  &__top {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    color: #fff;
-  }
-  &__main {
-    color: #000;
-  }
-  &__text,
-  &__main {
-    font-size: 28px;
-    font-weight: 700;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  &__info {
-    max-width: calc(100% - 65px);
-
-    .classify {
-      .item {
-        display: inline-block;
-        margin-top: 5px;
-        padding: 5px 10px;
-        border-radius: 18px;
-        background-color: rgba(255, 255, 255, 0.35);
-
-        &:not(:last-child) {
-          margin-right: 5px;
-        }
-      }
-
-    }
-  }
-}
-.card {
-  &__list {
-    margin: 20px 0 100px;
-    padding: 0 16px;
-  }
-}
+<style lang="scss" scoped>
 </style>

@@ -1,6 +1,6 @@
-//Data types generate from "https://app.quicktype.io/"
+//Data types generated from "https://app.quicktype.io/"
 
-export type PokeTypes = {
+export interface PokeTypes {
   resultCount?: number;
   results?: PokeInterface[];
 }
