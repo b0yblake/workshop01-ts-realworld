@@ -1,17 +1,26 @@
 <template>
-  <div :class="$style.wrap">
-    <main :class="$style.main">
-      <slot/>
+  <div class="wrap">
+    <main class="main">
+      <slot />
     </main>
   </div>
+  <TheFooter />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {
+  defineComponent
+} from 'vue'
+
+export default defineComponent({
   name: `LayoutDefault`,
-};
+})
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
+.wrap {
+  .main {
 
+  }
+}
 </style>

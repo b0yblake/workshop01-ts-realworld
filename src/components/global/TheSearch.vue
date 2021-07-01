@@ -1,7 +1,7 @@
 <template>
   <div class="search">
-    <input type="text" v-model="searchText" />
     <button @click="searchPokes(searchText)">Search</button>
+    <input type="text" v-model="searchText" placeholder="Search pokémon, Move, Ability etc.." />
   </div>
 </template>
 

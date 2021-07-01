@@ -51,29 +51,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.card {
-  &__wrap {
-    display: flex;
-    flex-direction: row;
 
-    border-radius: 10px;
-    padding: 15px 0;
-
-    .title {
-      &__top {
-        flex: 1 1 auto;
-      }
-      &__text {
-        font-size: 18px;
-      }
-    }
-
-    .chip {
-      padding: 3px 8px;
-      border-radius: 10px;
-      font-size: 12px;
-    }
-    
-  }
-}
 </style>
