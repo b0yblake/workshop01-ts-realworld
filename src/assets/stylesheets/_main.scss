@@ -1,3 +1,14 @@
+.wrapper {
+  position: relative;
+  margin: 50px auto;
+  max-width: 640px;
+  min-width: auto;
+  height: auto;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  box-shadow: 8px 10px 30px #f3f3f3;
+}
+
 .title {
   &__top {
     position: relative;
@@ -24,6 +35,23 @@
   }
   &__info {
     max-width: calc(100% - 65px);
+  }
+}
+
+.navigation {
+  &__top {
+    padding: 30px 16px;
+  }
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    
+    > a {
+      position: absolute;
+      right: 10px;
+    }
   }
 }
 

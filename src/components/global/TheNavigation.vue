@@ -1,12 +1,7 @@
 <template>
   <nav class="navigation__top">
     <div class="navigation__main">
-      <button type="button" class="btn_back">
-        <fa icon="chevron-left" class="ico"></fa>
-      </button>
-      <a href="#none" class="whistlist">
-        <fa icon="cog" class="ico"></fa>
-      </a>
+      <slot name="main_navbar"></slot>
     </div>
   </nav>
 </template>
@@ -28,15 +23,4 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.navigation {
-  &__top {
-    padding: 30px 16px;
-  }
-  &__main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-  }
-}
 </style>
