@@ -5,7 +5,6 @@
         <fa icon="chevron-left" class="ico"></fa>
       </button>
       <a href="#none" class="whistlist">
-        <!-- <font-awesome-icon :icon="['fab', 'github']" /> -->
         <fa icon="cog" class="ico"></fa>
       </a>
     </div>

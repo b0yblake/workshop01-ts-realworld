@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 // add custom fa free brand & solid types (...)
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faPlay, faCog, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-
+// https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=search
+import { faGithub, faSearchengin } from '@fortawesome/free-brands-svg-icons';
+import { faPlay, faCog, faChevronLeft, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 
 
 // Excute the libs
@@ -13,7 +13,9 @@ library.add(
   faGithub,
   faPlay,
   faCog,
-  faChevronLeft
+  faChevronLeft,
+  faMicrophone,
+  faSearchengin,
 );
 
 export default FontAwesomeIcon

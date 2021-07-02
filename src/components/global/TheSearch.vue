@@ -1,13 +1,20 @@
 <template>
-  <div class="search">
-    <button @click="searchPokes(searchText)">Search</button>
-    <input
-      type="text"
-      v-model="searchText"
-      placeholder="Search pokémon, Move, Ability etc.."
-      @keydown.enter.prevent="handleEnter(searchText)"
-    />
-  </div>
+  <form @submit.prevent="searchPokes(searchText)">
+    <div class="search">
+      <button type="submit">
+        <fa :icon="['fab', 'searchengin']" class="ico" /> <!-- fab types -->
+      </button>
+      <input
+        type="text"
+        v-model="searchText"
+        placeholder="Search pokémon, Move, Ability etc.."
+      />
+      <button type="button" class="btn_voice">
+        <fa icon="microphone" class="ico"></fa> <!-- fas (default) types -->
+      </button>
+    </div>
+  </form>
+  
 </template>
 
 <script>
@@ -26,14 +33,10 @@ export default defineComponent({
     const searchPokes = (response) => {
       context.emit('searchText', response)
     }
-    const handleEnter = (response) => {
-      context.emit('searchText', response)
-    }
 
     return {
       searchText,
-      searchPokes,
-      handleEnter
+      searchPokes
     }
   }
 })
