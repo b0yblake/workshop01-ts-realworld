@@ -1,5 +1,5 @@
 <template>
-  <div class="card__wrap">
+  <div class="card__wrap" :class="color">
     <div class="title__top">
       <div class="title__info">
         <h2 class="title__text">{{ pokedex.data?.forms?.[0].name }}</h2>

@@ -1,7 +1,12 @@
 <template>
   <div class="search">
     <button @click="searchPokes(searchText)">Search</button>
-    <input type="text" v-model="searchText" placeholder="Search pokémon, Move, Ability etc.." />
+    <input
+      type="text"
+      v-model="searchText"
+      placeholder="Search pokémon, Move, Ability etc.."
+      @keydown.enter.prevent="handleEnter(searchText)"
+    />
   </div>
 </template>
 
@@ -21,10 +26,14 @@ export default defineComponent({
     const searchPokes = (response) => {
       context.emit('searchText', response)
     }
+    const handleEnter = (response) => {
+      context.emit('searchText', response)
+    }
 
     return {
       searchText,
-      searchPokes
+      searchPokes,
+      handleEnter
     }
   }
 })

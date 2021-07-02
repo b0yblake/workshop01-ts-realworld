@@ -52,29 +52,3 @@ css: {
 },
 // 
 ```
-
-### Giải thích từng bước ✔
-- Sử dụng attribute `lang` tại `<script>` 
-
-```
-<script lang="ts">
-...
-</script>
-```
-
-- Cú pháp `defineComponent` tại export là cần thiết để chạy export dưới dạng file typeScript
-
-```
-import { defineComponent } from 'vue'
-export default defineComponent({
-  ...
-})
-```
-
-
-- Cùng xem lại các kiểu dữ liệu trong `typeScript`:
-
-| All    | Loại                                                                                              |
-| -------| :-------------------------------------------------------------------------------------------------|
-| Tất cả | boolean , number , string , array , object , tuple , enum , any , void , undefined , null , never |
-| Common | boolean , number , string , array , object, void , undefined , null                               |

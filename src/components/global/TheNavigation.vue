@@ -1,8 +1,13 @@
 <template>
   <nav class="navigation__top">
     <div class="navigation__main">
-      <button type="button" class="btn_back">Action back</button>
-      <a href="#none" class="whistlist">Heart</a>
+      <button type="button" class="btn_back">
+        <fa icon="chevron-left" class="ico"></fa>
+      </button>
+      <a href="#none" class="whistlist">
+        <!-- <font-awesome-icon :icon="['fab', 'github']" /> -->
+        <fa icon="cog" class="ico"></fa>
+      </a>
     </div>
   </nav>
 </template>

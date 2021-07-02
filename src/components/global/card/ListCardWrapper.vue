@@ -9,8 +9,8 @@
   <!-- Search Result Area -->
   <section class="card__list" v-show="searchText">
     <ul class="card__list-wrap">
-      <li class="item green">
-        <CardItem :pokedex="pokedex" />
+      <li class="item item-result">
+        <router-link to="/#"><CardItem :pokedex="pokedex" /></router-link>
       </li>
     </ul>
   </section>
