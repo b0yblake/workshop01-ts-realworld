@@ -1,50 +1,45 @@
 <template>
-  <LayoutDefault>
+  <div class="dialog-page">
 
-    <!-- Call out default slot -->
-    <template #default>
-      <div class="wrapper">
-        
-         <!-- navigation -->
-        <TheNavigation>
-          <template #main_navbar>
-            <!-- <button type="button" class="btn_back">
-              <fa icon="chevron-left" class="ico"></fa>
-            </button> -->
-            <a href="#none" class="whistlist">
-              <fa icon="cog" class="ico"></fa>
-            </a>
-          </template>
-        </TheNavigation>
+    <!-- navigation -->
+    <TheNavigation>
+      <template #main_navbar>
+        <button type="button" class="btn_back">
+          <fa icon="chevron-left" class="ico"></fa>
+        </button>
+        <a href="#none" class="whistlist">
+          <fa icon="heart" class="ico"></fa>
+        </a>
+      </template>
+    </TheNavigation>
 
-        <!-- main content -->
-        <ListCardWrapper />
-      </div>
-    </template>
-
-  </LayoutDefault>
+    Poke Name: {{ pokeName }}
+    
+  </div>
 </template>
 
 <script lang="ts">
 import {
   defineComponent,
+  defineAsyncComponent,
   ref,
+  computed,
+  ComputedRef,
 } from 'vue'
-import LayoutDefault from '@/templates/layouts/LayoutDefault.vue'
+import { useRoute } from 'vue-router'
 
 export default defineComponent({
   name: "DetailPage",
-  components: {
-    LayoutDefault
-  },
-  setup(props, context) {
+  setup() {
+    const router = useRoute()
+    const pokeName = computed(() => router.params.pokeName) as ComputedRef<string>
 
     return {
+      pokeName
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-
 </style>

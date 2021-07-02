@@ -2,6 +2,7 @@
   <form @submit.prevent="searchPokes(searchText)">
     <div class="search">
       <button type="submit">
+        <!-- <fa icon="search" class="ico"></fa> -->
         <fa :icon="['fab', 'searchengin']" class="ico" /> <!-- fab types -->
       </button>
       <input

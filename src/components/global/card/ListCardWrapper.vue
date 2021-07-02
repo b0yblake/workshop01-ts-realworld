@@ -10,7 +10,7 @@
   <section class="card__list" v-show="searchText">
     <ul class="card__list-wrap">
       <li class="item item-result">
-        <router-link to="/#"><CardItem :pokedex="pokedex" /></router-link>
+        <router-link :to="`/pokemon/${searchText}`"><CardItem :pokedex="pokedex" /></router-link>
       </li>
     </ul>
   </section>
@@ -37,7 +37,7 @@
     </ul>
   </section>
 
-  <!-- search Area -->
+  <!-- Search Area -->
   <section class="article__container">
     <div class="article__header">
       <h2 class="">Pokémon News</h2>
@@ -78,6 +78,13 @@
       </ul>
     </div>
   </section>
+
+  <!-- Dialog page Area -->
+  <teleport to="#layer">
+    <div class="page-trandition">
+      <router-view></router-view>
+    </div>
+  </teleport>
 
 </template>
 
