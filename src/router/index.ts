@@ -5,7 +5,7 @@ import {
   RouteRecordRaw
 } from 'vue-router'
 // import Home from '@/views/Home.vue'
-import DetailPage from '@/views/DetailPage.vue'
+import CardItemDetail from '@/components/global/card/CardItemDetail.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,17 +13,8 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: () => import('@/views/Home.vue'),
     children: [
-      {
-        path: 'pokemon/:pokeName',
-        name: 'DetailPage',
-        component: DetailPage
-      }
+      { path: 'pokemon/:pokeName', name: 'CardItemDetail', component: CardItemDetail }
     ],
-  },
-  {
-    path: '/poke',
-    name: 'DetailPage1',
-    component: () => import('@/views/DetailPage.vue'),
   },
   {
     path: '/:catchAll(.*)',

@@ -12,9 +12,9 @@
             <!-- <button type="button" class="btn_back">
               <fa icon="chevron-left" class="ico"></fa>
             </button> -->
-            <a href="#none" class="whistlist">
+            <button type="button" class="btn_settings">
               <fa icon="cog" class="ico"></fa>
-            </a>
+            </button>
           </template>
         </TheNavigation>
 

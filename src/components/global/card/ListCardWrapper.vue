@@ -9,8 +9,8 @@
   <!-- Search Result Area -->
   <section class="card__list" v-show="searchText">
     <ul class="card__list-wrap">
-      <li class="item item-result">
-        <router-link :to="`/pokemon/${searchText}`"><CardItem :pokedex="pokedex" /></router-link>
+      <li class="item item-result" @click="onEnterDetailPage">
+        <router-link :to="`/pokemon/${searchText}`"><CardItem :pokedex="stateRawPokedex" /></router-link>
       </li>
     </ul>
   </section>
@@ -80,11 +80,9 @@
   </section>
 
   <!-- Dialog page Area -->
-  <teleport to="#layer">
-    <div class="page-trandition">
-      <router-view></router-view>
-    </div>
-  </teleport>
+  <div class="dialog" :class="{ show : stateDialogPage }">
+    <router-view></router-view>
+  </div>
 
 </template>
 
@@ -97,9 +95,9 @@ import {
   onMounted,
 } from 'vue'
 import { pokeSearch } from "@/services"
-import { PokeInterface } from '@/@types/PokeTypes.interface'
 import thumb from '@/assets/images/pokemon-detective-pikachu-2840-backdrop.jpg'
 import thumb2 from '@/assets/images/4628259_cover_pikachu-1.jpg'
+import useDialogState from '@/composables/state'
 
 // import { pokeInit } from "@/services"
 // import { PokeTypes } from '@/@types/PokeTypes.interface'
@@ -109,9 +107,12 @@ export default defineComponent({
   name: "ListCardWrapper",
   setup() {
 
-    let pokedex = reactive<{ data: PokeInterface }>({ data: {} });
-    // let pokedexInit = reactive<{ data: PokeInterface }>({ data: {} });
-    let searchText = ref(null);
+    const { isToggleDialog, stateDialogPage, stateRawPokedex } = useDialogState
+    const searchText = ref(null)
+    
+    const onEnterDetailPage = () => {
+      isToggleDialog(true)
+    }
 
     const handleSearchText = (res: string) => {
       searchText.value = res.toLowerCase()
@@ -122,13 +123,13 @@ export default defineComponent({
 
     const pokeSearchResponse = async (search: string): Promise<void> => {
       const response = await pokeSearch(search)
-      pokedex.data = response
-      // console.log("data: ", pokedex)
+      stateRawPokedex.data = response
+      // console.log("data: ", stateRawPokedex)
     };
 
     // const pokeInitResponse = async (): Promise<void> => {
     //   const response = await pokeInit()
-    //   pokedexInit.data = response
+    //   stateRawPokedexInit.data = response
 
     // };
     // onMounted(() => {
@@ -136,12 +137,14 @@ export default defineComponent({
     // })
 
     return {
-      pokedex,
       searchText,
       handleSearchText,
       pokeSearchResponse,
       thumb,
       thumb2,
+      onEnterDetailPage,
+      stateDialogPage,
+      stateRawPokedex,
     }
   }
 })

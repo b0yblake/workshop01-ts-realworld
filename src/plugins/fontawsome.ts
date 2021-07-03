@@ -4,7 +4,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 // add custom fa free brand & solid types (...)
 // https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=search
 import { faGithub, faSearchengin } from '@fortawesome/free-brands-svg-icons';
-import { faPlay, faCog, faChevronLeft, faMicrophone, faSearch,faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faCog, faChevronLeft, faMicrophone, faSearch,faHeart, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 // Excute the libs
@@ -18,6 +18,7 @@ library.add(
   faSearchengin,
   faSearch,
   faHeart,
+  faArrowLeft,
 );
 
 export default FontAwesomeIcon
