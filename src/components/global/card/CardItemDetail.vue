@@ -26,16 +26,85 @@
     </div>
 
 
-    <div class="detail__content">
+    <div class="detail__area">
       
-      <div class="detail__tabs">
+      <div class="detail__tab">
         <div class="hero_thumb">
           <figure>
             <img :src="stateRawPokedex.data?.sprites?.front_default" alt="{{ stateRawPokedex.data?.forms?.[0].name }}" />
           </figure>
         </div>
 
-        
+        <div class="detail__tab-nav">
+          <ul class="tab-nav">
+            <li class="tab-nav__item active">
+              <button type="button" class="">About</button>
+            </li>
+            <li class="tab-nav__item">
+              <button type="button" class="">Base Stats</button>
+            </li>
+            <li class="tab-nav__item">
+              <button type="button" class="">Evolutions</button>
+            </li>
+            <li class="tab-nav__item">
+              <button type="button" class="">Moves</button>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane">
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+              Tab content about <br>
+            </div>
+          </div>
+        </div>
         
       </div>
     </div>
