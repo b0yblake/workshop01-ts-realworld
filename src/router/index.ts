@@ -6,6 +6,7 @@ import {
 } from 'vue-router'
 // import Home from '@/views/Home.vue'
 import CardItemDetail from '@/components/global/card/CardItemDetail.vue'
+import PostViewDetail from '@/components/global/post/PostViewDetail.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,7 +14,8 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: () => import('@/views/Home.vue'),
     children: [
-      { path: 'pokemon/:pokeName', name: 'CardItemDetail', component: CardItemDetail }
+      { path: 'pokemon/:pokeName', name: 'CardItemDetail', component: CardItemDetail },
+      { path: 'post/:postName', name: 'PostViewDetail', component: PostViewDetail }
     ],
   },
   {

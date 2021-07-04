@@ -15,7 +15,7 @@
     </ul>
   </section>
 
-  <!-- Categories area -->
+  <!-- Categories Area -->
   <section class="card__list category-card__list">
     <h2 class="blind">Categories pokemon</h2>
     <ul class="card__list-wrap">
@@ -37,7 +37,7 @@
     </ul>
   </section>
 
-  <!-- Search Area -->
+  <!-- Post Area -->
   <section class="article__container">
     <div class="article__header">
       <h2 class="">Pokémon News</h2>
@@ -46,7 +46,7 @@
     <div class="article__content">
       <ul class="article__list">
         <li class="article__item">
-          <router-link to="/#">
+          <router-link to="/post/pokemon-rumble-rush-arrives-soon" @click="onEnterDetailPage">
           <div class="article__item-wrap">
             <div class="details">
               <h3 class="">Pokemon Rumble Rush Arrives Soon</h3>
@@ -61,7 +61,7 @@
           </router-link>
         </li>
         <li class="article__item">
-          <router-link to="/#">
+          <router-link to="/post/detective-pikachu" @click="onEnterDetailPage">
           <div class="article__item-wrap">
             <div class="details">
               <h3 class="">Detective Pikachu</h3>
