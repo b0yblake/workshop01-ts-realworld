@@ -46,7 +46,8 @@ export default defineComponent({
     const { isToggleDialog } = useDialogState
     const onCloseDialogPage = () => {
       isToggleDialog(false)
-      router.push('/')
+
+      // router.push('/post')
     }
     return {
       postName,

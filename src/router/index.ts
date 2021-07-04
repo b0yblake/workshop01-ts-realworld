@@ -15,13 +15,16 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Home.vue'),
     children: [
       { path: 'pokemon/:pokeName', name: 'CardItemDetail', component: CardItemDetail },
-      { path: 'post/:postName', name: 'PostViewDetail', component: PostViewDetail }
+      { path: ':postName', name: 'PostViewDetail1', component: PostViewDetail }
     ],
   },
   {
     path: '/post',
     name: 'PostView',
     component: () => import('@/views/PostView.vue'),
+    children: [
+      { path: ':postName', name: 'PostViewDetail2', component: PostViewDetail }
+    ]
   },
   {
     path: '/:catchAll(.*)',
