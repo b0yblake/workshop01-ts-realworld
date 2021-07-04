@@ -17,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
+    path: '/post',
+    name: 'PostView',
+    component: () => import('@/views/PostView.vue'),
+  },
+  {
     path: '/:catchAll(.*)',
     name: 'PageNotFound',
     component: () => import('@/views/NotFound.vue'),

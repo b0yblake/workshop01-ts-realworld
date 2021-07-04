@@ -41,7 +41,7 @@
   <section class="article__container">
     <div class="article__header">
       <h2 class="">Pokémon News</h2>
-      <router-link to="/post/all">View All</router-link>
+      <router-link to="/post">View All</router-link>
     </div>
     <div class="article__content">
       <ul class="article__list">
