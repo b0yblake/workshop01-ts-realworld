@@ -25,76 +25,40 @@
       <strong class="ranking">#00{{ stateRawPokedex.data?.order }}</strong>
     </div>
 
-
     <div class="detail__area">
-      
       <div class="detail__tab">
         <div class="hero_thumb">
           <figure>
             <img :src="stateRawPokedex.data?.sprites?.front_default" alt="{{ stateRawPokedex.data?.forms?.[0].name }}" />
           </figure>
         </div>
-
         <div class="detail__tab-nav">
           <ul class="tab-nav">
-            <li class="tab-nav__item active">
-              <button type="button" class="">About</button>
-            </li>
-            <li class="tab-nav__item">
-              <button type="button" class="">Base Stats</button>
-            </li>
-            <li class="tab-nav__item">
-              <button type="button" class="">Evolutions</button>
-            </li>
-            <li class="tab-nav__item">
-              <button type="button" class="">Moves</button>
+            <li
+              v-for='(tab, index) in tabs'
+              :key="`${tab}_${index}`"
+              :class="['tab-nav__item', { active: currentTab === tab}]"
+            >
+              <button
+                type="button"
+                class=""
+                @click='currentTab = tab'
+              >
+                {{ tab }}
+              </button>
             </li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane">
-              <TabPaneWrapper>
-                <template #generation>
-                  <div class="generation__box">
-                    <strong>Pokemon is generation 1</strong>
-                  </div>
-                </template> 
-
-                <template #tab-pane-main>
-                  <div class="order-list">
-                    <dl>
-                      <dt>Species</dt>
-                      <dd>Seed</dd>
-                      <dt>Height</dt>
-                      <dd>2,3.6" (0.70 cm)</dd>
-                      <dt>Weight</dt>
-                      <dd>15.2 Ibs (6.9kg)</dd>
-                      <dt>Abilities</dt>
-                      <dd>Overgrow, Chiorophyl</dd>
-                    </dl>
-                  </div>
-                  <strong>Breeding</strong>
-                  <div class="order-list">
-                    <dl>
-                      <dt>Gender</dt>
-                      <dd>87.5% - 12.5%</dd>
-                      <dt>Egg Groups</dt>
-                      <dd>Monster</dd>
-                      <dt>Egg Cycle</dt>
-                      <dd>Grass</dd>
-                    </dl>
-                  </div>
-                </template>
-              </TabPaneWrapper>
+              <keep-alive>
+                <component :is="currentTab"></component>
+              </keep-alive>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
 
-
-    
-    
   </div>
 </template>
 
@@ -105,6 +69,7 @@ import {
   ref,
   computed,
   ComputedRef,
+  watchEffect,
 } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import useDialogState from '@/composables/state'
@@ -112,7 +77,15 @@ import useDialogState from '@/composables/state'
 // https://github.com/vuejs/rfcs/blob/master/active-rfcs/0026-async-component-api.md
 export default defineComponent({
   name: "CardItemDetail",
-  setup() {
+  components: {
+    TabPhraseAbout: defineAsyncComponent(() => import("@/components/global/tabs/TabPhraseAbout.vue")),
+    TabBaseStats: defineAsyncComponent(() => import("@/components/global/tabs/TabBaseStats.vue"))
+  },
+  data: () => ({
+    tabs: ["TabPhraseAbout", "TabBaseStats", "TabEvolutions", "TabMoves"],
+    currentTab: "TabPhraseAbout"
+  }),
+  setup(props, context) {
     const route = useRoute()
     const router = useRouter()
 
@@ -123,10 +96,13 @@ export default defineComponent({
       isToggleDialog(false)
       router.push('/')
     }
+
+    // const currentTabComponent = computed(() => `${currentTab.toLowerCase()}`)
+
     return {
       pokeName,
       onCloseDialogPage,
-      stateRawPokedex,
+      stateRawPokedex
     }
   }
 })
