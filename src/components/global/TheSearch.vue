@@ -2,8 +2,10 @@
   <form @submit.prevent="searchPokes(searchText)">
     <div class="search">
       <button type="submit">
-        <!-- <fa icon="search" class="ico"></fa> -->
-        <fa :icon="['fab', 'searchengin']" class="ico" /> <!-- fab types -->
+        <fa icon="search" class="ico"></fa>
+
+        <!-- fab types -->
+        <!-- <fa :icon="['fab', 'searchengin']" class="ico" /> -->
       </button>
       <input
         type="text"
@@ -32,6 +34,7 @@ export default defineComponent({
 
     const searchText = ref(null)
     const searchPokes = (response) => {
+      if(!searchText.value) return
       context.emit('searchText', response)
     }
 

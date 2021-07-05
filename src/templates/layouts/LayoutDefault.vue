@@ -1,9 +1,7 @@
 <template>
-  <div class="wrap">
-    <main class="main">
-      <slot />
-    </main>
-  </div>
+  <main class="main">
+    <slot />
+  </main>
   <TheFooter />
 </template>
 
@@ -16,11 +14,3 @@ export default defineComponent({
   name: `LayoutDefault`,
 })
 </script>
-
-<style lang="scss" scoped>
-.wrap {
-  .main {
-
-  }
-}
-</style>

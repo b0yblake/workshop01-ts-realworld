@@ -209,7 +209,7 @@
         </section>
 
         <!-- Dialog page Area -->
-        <div class="dialog" :class="{ show : stateDialogPage }">
+        <div class="dialog dialog-page" :class="{ show : stateDialogPage }">
           <router-view></router-view>
         </div>
         

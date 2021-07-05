@@ -1,8 +1,8 @@
 .wrapper {
   position: relative;
   overflow: hidden;
-  margin: 50px auto;
-  max-width: 640px;
+  margin: 20px auto;
+  max-width: 480px;
   min-width: auto;
   height: auto;
   background-color: #f5f5f5;
@@ -22,6 +22,7 @@
   &__main {
     color: #000;
     line-height: 1.2;
+    font-family: OtomanopeeOne;
   }
   &__text,
   &__main {
@@ -57,7 +58,7 @@
     .btn_settings {
       position: absolute;
       right: 10px;
-      padding: 5px 20px;
+      padding: 5px 10px;
     }
 
     button {
@@ -220,16 +221,17 @@
   position: relative;
   margin-top: 15px;
   input {
-    border: 1px solid #ccc;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 12px;
     padding: 7px 10px;
     width: 100%;
     display: block;
-    padding-left: 78px;
+    padding-left: 45px;
   }
   button {
     position: absolute;
     margin-left: 5px;
-    height: 32px;
+    margin-top: 3px;
     padding: 5px 10px;
   }
   .btn_voice {
@@ -237,6 +239,7 @@
     right: 0;
     top: 0;
     margin-right: 5px;
+    margin-top: 2px;
     height: 32px;
     padding: 5px 10px;
   }
@@ -257,6 +260,7 @@
     h2 {
       font-size: 20px;
       font-weight: 700;
+      font-family: OtomanopeeOne;
     }
 
     a {
@@ -287,13 +291,13 @@
   &__content {
     .details {
       h3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 16px;
+        font-weight: 500;
       }
       .duration {
-        color: #ccc;
-        font-size: 14px;
-        font-weight: 700;
+        color: rgb(189, 189, 189);
+        font-size: 12px;
+        font-weight: 300;
       }
     }
     .thumb {
@@ -321,13 +325,16 @@ footer {
 }
 
 .dialog {
-  position: absolute;
-  right: -100%;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-  transition: all 0.3s ease-in-out;
+  &.dialog-page {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+  
 
   &.show {
     right: 0;
@@ -352,6 +359,53 @@ footer {
     &__main {
       > button {
         color: #fff;
+      }
+    }
+  }
+}
+
+#layer {
+  .dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 111111;
+    justify-content: center;
+    align-items: center;
+    background: #0008;
+
+    &.show {
+      display: flex;
+    }
+    
+    &__wrapper {
+      width: 70vw;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 8px;
+      position: relative;
+      padding: 15px 30px;
+    }
+  }
+}
+
+.theme {
+  &__btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__action {
+    margin: 10px 0;
+    button {
+      &:not(:first-child) {
+        margin-left: 10px;
       }
     }
   }

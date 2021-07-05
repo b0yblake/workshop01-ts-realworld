@@ -51,7 +51,7 @@
           <div class="tab-content">
             <div class="tab-pane">
               <keep-alive>
-                <component :is="currentTab"></component>
+                <component :is="currentTabComponent"></component>
               </keep-alive>
             </div>
           </div>
@@ -81,14 +81,12 @@ export default defineComponent({
     TabPhraseAbout: defineAsyncComponent(() => import("@/components/global/tabs/TabPhraseAbout.vue")),
     TabBaseStats: defineAsyncComponent(() => import("@/components/global/tabs/TabBaseStats.vue"))
   },
-  data: () => ({
-    tabs: ["TabPhraseAbout", "TabBaseStats", "TabEvolutions", "TabMoves"],
-    currentTab: "TabPhraseAbout"
-  }),
   setup(props, context) {
     const route = useRoute()
     const router = useRouter()
 
+    const tabs = ref(["TabPhraseAbout", "TabBaseStats", "TabEvolutions", "TabMoves"])
+    const currentTab = ref("TabPhraseAbout")
     const pokeName = computed(() => route.params.pokeName) as ComputedRef<string>
 
     const { isToggleDialog, stateRawPokedex } = useDialogState
@@ -97,12 +95,15 @@ export default defineComponent({
       router.push('/')
     }
 
-    // const currentTabComponent = computed(() => `${currentTab.toLowerCase()}`)
+    const currentTabComponent = computed(() => `${currentTab.value}`)
 
     return {
       pokeName,
       onCloseDialogPage,
-      stateRawPokedex
+      stateRawPokedex,
+      tabs,
+      currentTab,
+      currentTabComponent,
     }
   }
 })
