@@ -69,6 +69,5 @@ export default defineComponent({
   .ico {
     color: #000;
   }
-  
 }
 </style>

@@ -36,38 +36,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.card {
-  &__wrap {
-    background-position: left;
-    background-size: 150%;
 
-    &.green {
-      background-color: #5ebf62;
-      background-image: url("@/assets/images/188989.png");
-    }
-    &.red {
-      background-color: #f7776a;
-      background-image: url("@/assets/images/188997.png");
-    }
-    &.blue {
-      background-color: #57a9f3;
-      background-image: url("@/assets/images/188993.png");
-    }
-    &.yellow {
-      background-color: #ffce4b;
-      background-image: url("@/assets/images/188987.png");
-    }
-    &.violet {
-      background-color: #b862cf;
-      background-image: url("@/assets/images/188995.png");
-    }
-    transition: background-size 0.5s ease-in-out;
-
-    &:hover {
-      background-position: left;
-      background-size: 200%;
-      transition: background-size 0.5s cubic-bezier(0,0,0,1);
-    }
-  }
-}
 </style>
