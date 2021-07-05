@@ -15,8 +15,14 @@
         <img :src="thumb" alt="" />
       </div>
       <div class="post__content">
-        <h2>{{ postName }}</h2>
-        post view detail
+        <h2>Pokemon Rumble Rush Arrives Soon</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+        <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>Pokemon Rumble Rush Arrives Soon</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+        <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
       
     </div>
@@ -59,4 +65,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.btn_back {
+  .ico {
+    color: #000;
+  }
+  
+}
 </style>
