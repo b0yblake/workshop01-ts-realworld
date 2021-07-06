@@ -6,6 +6,10 @@
 <p align="center"><img src="@screenshot/theme-mode.png" alt="" width="100%" height="auto"></p>
 
 
+## Performance
+<p align="center"><img src="@screenshot/performance.png" alt="" width="100%" height="auto"></p>
+
+
 This template should help get you started developing with Vue 3 and Typescript in Vite.
 
 ## Recommended IDE Setup
