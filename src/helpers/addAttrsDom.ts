@@ -1,4 +1,4 @@
-//create and set the attr to html tag
+// Create and set the attr to html tag
 // Not good because get-set use same method
 export function setAttrDom(attributes: string) {
   const attr = document.createAttribute(`data-theme`)

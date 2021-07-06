@@ -5,7 +5,7 @@
   max-width: 480px;
   min-width: auto;
   height: auto;
-  background-color: #f5f5f5;
+  background-color: var(--background);
   border-radius: 30px;
   box-shadow: 8px 10px 30px #f3f3f3;
 }
@@ -20,7 +20,7 @@
     color: #fff;
   }
   &__main {
-    color: #000;
+    color: var(--text-primary);
     line-height: 1.2;
     font-family: OtomanopeeOne;
   }
@@ -262,15 +262,18 @@
     width: 100%;
     display: block;
     padding-left: 45px;
+    outline: none;
   }
   .ico {
     font-size: 14px;
+    color: var(--secondary);
   }
   button {
     position: absolute;
     margin-left: 5px;
     margin-top: 3px;
     padding: 5px 10px;
+    outline: none;
   }
   .btn_voice {
     position: absolute;
@@ -299,6 +302,7 @@
       font-size: 20px;
       font-weight: 700;
       font-family: OtomanopeeOne;
+      color: var(--text-primary);
     }
 
     a {
@@ -331,6 +335,7 @@
       h3 {
         font-size: 16px;
         font-weight: 500;
+        color: var(--text-primary);
       }
       .duration {
         color: rgb(189, 189, 189);
@@ -363,6 +368,7 @@
   }
   &__content {
     padding: 20px;
+    color: var(--text-primary);
 
     h2 {
       font-size: 18px;
@@ -383,6 +389,7 @@ footer {
 
 .ico {
   font-size: 20px;
+  color: var(--text-primary);
 }
 
 .dialog {
@@ -399,7 +406,7 @@ footer {
 
   &.show {
     right: 0;
-    background-color: #f5f5f5;
+    background-color: var(--background);
   }
 
   .title__top {
@@ -419,7 +426,9 @@ footer {
   .navigation {
     &__main {
       > button {
-        color: #fff;
+        .ico {
+          color: var(--text-primary);
+        }
       }
     }
   }
@@ -445,10 +454,11 @@ footer {
     &__wrapper {
       width: 70vw;
       max-width: 900px;
-      background: #fff;
+      background: var(--background);
       border-radius: 8px;
       position: relative;
       padding: 15px 30px;
+      
     }
   }
 }
@@ -458,9 +468,14 @@ footer {
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    color: var(--text-primary);
+    &.active {
+      border-color: var(--text-primary);
+    }
   }
   &__title {
     font-weight: 700;
+    color: var(--text-primary);
   }
   &__action {
     margin: 10px 0;
