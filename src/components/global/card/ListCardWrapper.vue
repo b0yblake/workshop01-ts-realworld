@@ -10,7 +10,7 @@
   <section class="card__list" v-show="searchText">
     <ul class="card__list-wrap">
       <li class="item item-result" @click="onEnterDetailPage">
-        <router-link :to="`/pokemon/${searchText}`"><CardItem :pokedex="stateRawPokedex" /></router-link>
+        <router-link :to="`/pokemon/${searchText}`"><CardItem :pokedex="data" /></router-link>
       </li>
     </ul>
   </section>
@@ -92,16 +92,13 @@ import {
   ref,
   reactive,
   toRefs,
+  toRef,
   onMounted,
 } from 'vue'
 import { pokeSearch } from "@/services"
 import thumb from '@/assets/images/pokemon-detective-pikachu-2840-backdrop.jpg'
 import thumb2 from '@/assets/images/4628259_cover_pikachu-1.jpg'
 import useDialogState from '@/composables/state'
-
-// import { pokeInit } from "@/services"
-// import { PokeTypes } from '@/@types/PokeTypes.interface'
-
 
 export default defineComponent({
   name: "ListCardWrapper",
@@ -124,17 +121,7 @@ export default defineComponent({
     const pokeSearchResponse = async (search: string): Promise<void> => {
       const response = await pokeSearch(search)
       stateRawPokedex.data = response
-      // console.log("data: ", stateRawPokedex)
     };
-
-    // const pokeInitResponse = async (): Promise<void> => {
-    //   const response = await pokeInit()
-    //   stateRawPokedexInit.data = response
-
-    // };
-    // onMounted(() => {
-    //   pokeInitResponse()
-    // })
 
     return {
       searchText,
@@ -144,7 +131,7 @@ export default defineComponent({
       thumb2,
       onEnterDetailPage,
       stateDialogPage,
-      stateRawPokedex,
+      ...toRefs(stateRawPokedex)
     }
   }
 })
