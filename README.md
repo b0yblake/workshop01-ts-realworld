@@ -1,9 +1,9 @@
 <h1 align="center">🐣 Pokémon dual with Vite 🌊</h1>
 
-<p align="center"><img src="@screenshot/theme-mode.png" alt="" width="100%" height="auto"></p>
 <p align="center"><img src="@screenshot/home.png" alt="" width="100%" height="auto"></p>
 <p align="center"><img src="@screenshot/post.png" alt="" width="100%" height="auto"></p>
 <p align="center"><img src="@screenshot/search-success.png" alt="" width="500px" height="auto"></p>
+<p align="center"><img src="@screenshot/theme-mode.png" alt="" width="100%" height="auto"></p>
 
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.

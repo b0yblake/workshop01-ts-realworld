@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--highlight);
   }
   &__main {
     color: var(--text-primary);
@@ -118,11 +118,6 @@
               top: 0;
               bottom: 0;
               z-index: 0;
-              // -webkit-filter: blur(3px);
-              // -moz-filter: blur(3px);
-              // -o-filter: blur(3px);
-              // -ms-filter: blur(3px);
-              // filter: blur(3px);
               background-position: center;
               background-size: 150%;
               background-image: url("@/assets/images/1033032.png");
@@ -413,6 +408,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-primary);
   }
   // .detail {
   //   &-page {
